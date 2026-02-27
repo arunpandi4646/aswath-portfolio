@@ -16,7 +16,7 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
 
@@ -58,6 +58,8 @@ export function Navbar() {
   }, [mobileOpen])
 
   const closeMobile = () => setMobileOpen(false)
+
+  const currentTheme = resolvedTheme ?? "dark"
 
   return (
     <header
@@ -108,11 +110,11 @@ export function Navbar() {
         <div className="hidden lg:flex items-center gap-3">
           {mounted && (
             <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
               className="flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-card text-muted-foreground hover:border-[#10B981]/40 hover:text-[#10B981] transition-all duration-200"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? (
+              {currentTheme === "dark" ? (
                 <Sun className="h-4 w-4" />
               ) : (
                 <Moon className="h-4 w-4" />
@@ -132,11 +134,11 @@ export function Navbar() {
         <div className="flex lg:hidden items-center gap-2">
           {mounted && (
             <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-card text-muted-foreground transition-all"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? (
+              {currentTheme === "dark" ? (
                 <Sun className="h-4 w-4" />
               ) : (
                 <Moon className="h-4 w-4" />

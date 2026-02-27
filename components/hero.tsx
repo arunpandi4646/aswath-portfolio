@@ -125,7 +125,7 @@ export function Hero() {
             {/* Social links */}
             <div className="flex items-center justify-center lg:justify-start gap-3">
               {[
-                { icon: Github, href: "https://github.com/aswath", label: "GitHub" },
+                { icon: Github, href: "https://github.com/aswath00/", label: "GitHub" },
                 { icon: Linkedin, href: "https://linkedin.com/in/aswath", label: "LinkedIn" },
                 { icon: Mail, href: "mailto:aswath@example.com", label: "Email" },
               ].map((social) => (

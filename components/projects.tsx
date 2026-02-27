@@ -1,8 +1,9 @@
 "use client"
 
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { motion, useInView, AnimatePresence } from "framer-motion"
 import { ExternalLink, Github, ArrowUpRight, Sun, Moon } from "lucide-react"
+import { useTheme } from "next-themes"
 
 /* ─────────────────────────────────────────────────────────────
    TYPES
@@ -624,7 +625,14 @@ function ViewAllButton() {
    ROOT EXPORT
 ───────────────────────────────────────────────────────────── */
 export default function FeaturedProjects() {
-  const [theme, setTheme] = useState<Theme>("dark")
+  const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const theme: Theme = mounted && resolvedTheme === "light" ? "light" : "dark"
   const tk = T[theme]
 
   return (
@@ -641,7 +649,7 @@ export default function FeaturedProjects() {
       {/* ── Dark / Light toggle (fixed top-right) ── */}
       <ThemeToggle
         theme={theme}
-        onToggle={() => setTheme((prev) => (prev === "dark" ? "light" : "dark"))}
+        onToggle={() => setTheme(theme === "dark" ? "light" : "dark")}
       />
 
       {/* ── Ambient blobs ── */}
