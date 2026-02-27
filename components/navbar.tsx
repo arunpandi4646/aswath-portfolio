@@ -121,13 +121,7 @@ export function Navbar() {
               )}
             </button>
           )}
-          <a
-            href="#contact"
-            className="group flex items-center gap-1.5 rounded-xl bg-[#10B981] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_16px_rgba(16,185,129,0.25)] hover:shadow-[0_0_24px_rgba(16,185,129,0.4)] hover:brightness-110 transition-all duration-300"
-          >
-            Hire Me
-            <ChevronRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-          </a>
+
         </div>
 
         {/* Mobile buttons */}
