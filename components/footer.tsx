@@ -1,8 +1,8 @@
 import { Shield, Github, Linkedin, Mail } from "lucide-react"
 
 const socials = [
-  { icon: Github, href: "https://github.com/aswath", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/aswath", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/aswath00/", label: "GitHub" },
+  { icon: Linkedin, href: "www.linkedin.com/in/aswath-a-b-04113a223", label: "LinkedIn" },
   { icon: Mail, href: "mailto:aswath@example.com", label: "Email" },
 ]
 

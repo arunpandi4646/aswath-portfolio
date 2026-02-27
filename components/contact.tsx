@@ -22,13 +22,7 @@ const contactLinks = [
     label: "GitHub",
     value: "github.com/aswath",
     href: "https://github.com/aswath",
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "India",
-    href: null,
-  },
+  }
 ]
 
 export function Contact() {

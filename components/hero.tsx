@@ -17,6 +17,23 @@ export function Hero() {
   const [charIndex, setCharIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
 
+  // Function to handle resume download
+  const handleDownloadResume = () => {
+    // Create a link element
+    const link = document.createElement('a')
+    
+    // Set the href to the resume file in the public folder
+    link.href = '/Aswath_A_B.pdf'
+    
+    // Set the download attribute with the desired filename
+    link.download = 'Aswath_A_B.pdf'
+    
+    // Append to body, click, and remove
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   useEffect(() => {
     const el = containerRef.current
     if (!el) return
@@ -113,13 +130,13 @@ export function Hero() {
               >
                 View Projects
               </a>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground hover:border-[#10B981]/40 hover:text-[#10B981] transition-all duration-300"
+              <button
+                onClick={handleDownloadResume}
+                className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground hover:border-[#10B981]/40 hover:text-[#10B981] transition-all duration-300 cursor-pointer"
               >
                 <Download className="h-4 w-4" />
                 Resume
-              </a>
+              </button>
             </div>
 
             {/* Social links */}
